@@ -2,11 +2,11 @@
 
 > A customer service CRM design for handling passenger complaints end to end in Dynamics 365 Customer Service, with Power BI reporting.
 
-![Status](https://img.shields.io/badge/Case%20Study%20%26%20Prototype-In%20Progress-F59E0B?style=for-the-badge)
+![Status](https://img.shields.io/badge/Case%20Study-Prototype-0F766E?style=for-the-badge)
 ![Dynamics 365 Customer Service](https://img.shields.io/badge/Dynamics%20365%20Customer%20Service-002050?style=for-the-badge)
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge)
 
-> ⚠️ **Case Study & Prototype (in progress)** — this repository documents the solution design and prototype. It will be updated as the work progresses.
+> ℹ️ **Case Study & Prototype** — this repository documents the solution design and a working prototype built in Dynamics 365 Customer Service with sample data (fictional airline: Contoso Airways).
 
 ---
 
@@ -73,15 +73,25 @@ flowchart LR
 
 ## 📈 Outcomes
 
-- 🚧 In progress — outcomes will be added once available.
+The prototype demonstrates:
+
+- **Single case view across channels** — every complaint (email, call centre, social media, web form) is one Case with flight, booking, guest tier and compensation details in a dedicated *Flight & Complaint Details* section.
+- **Automated categorisation and routing** — a Power Automate flow (designed and built in the solution) reads the case title/description for keywords, sets the complaint category and adds the case to the right team queue (Flight Disruption, Baggage, Refunds & Compensation, Guest Relations General).
+- **SLA tracking** — a *Guest Complaint SLA* with a 4-hour first response and resolve-by targets of 48h (delays, cancellations, check-in), 72h (baggage, onboard service) and 120h (refunds), shown as live timers on the case.
+- **Tiered compensation approval** — a Power Automate approval flow (designed and built in the solution) routes requests up to AED 1,000 to a Team Lead and larger amounts to the Guest Relations Manager, with the approval status written back to the record.
+- **Performance reporting** — an in-app *Guest Relations Overview* dashboard and a Power BI report on complaint volume by category, channel, route, guest tier and SLA status.
 
 ## 🖼️ Screenshots
 
-> _Prototype screenshots coming soon._ Sample data only.
+> Prototype built in Dynamics 365 Customer Service with sample data (fictional airline: Contoso Airways).
 
-| Complaint case | Queues & SLAs | Compensation approval | Power BI dashboard |
-|---|---|---|---|
-| _placeholder_ | _placeholder_ | _placeholder_ | _placeholder_ |
+| | |
+|---|---|
+| ![Guest Relations Overview dashboard](screenshots/01-dashboard.png)<br/>**Guest Relations Overview** — complaints by category, channel, route, open vs resolved, SLA status, and SLA-breached list | ![Open complaints list](screenshots/02-complaints-list.png)<br/>**Open Complaints by Category** — one list across all channels with category, guest tier and SLA status |
+| ![Complaint case with SLA timers](screenshots/03a-case-form.png)<br/>**Complaint case** — live SLA timers (first response and resolve by) with category, channel and guest tier | ![Flight and complaint details](screenshots/03b-case-details.png)<br/>**Flight & Complaint Details** — flight, route, booking reference, queue and SLA fields |
+| ![Queues with cases](screenshots/04-queues.png)<br/>**Team queues** — complaints routed to Baggage, Flight Disruption and Guest Relations General | ![Compensation request](screenshots/05-compensation-request.png)<br/>**Compensation request** — AED 3,100 cash refund approved at Guest Relations Manager level |
+| ![Auto-categorise and route flow](screenshots/06-flow-auto-categorise.png)<br/>**Auto-Categorise and Route New Complaint** — Power Automate flow (keyword categorisation + queue routing) | ![Compensation approval flow](screenshots/07-flow-compensation-approval.png)<br/>**Compensation Approval** — Power Automate flow (amount-based approval level + Approvals) |
+| ![Power BI report](screenshots/08-powerbi-report.png)<br/>**Power BI report** — complaint volume by channel, guest tier, SLA status, route and category | |
 
 ## 🧠 Key learnings
 
